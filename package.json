@@ -1,6 +1,6 @@
 {
   "name": "@851-labs/refs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Manage shallow git reference repositories in ./references",
   "type": "module",
   "packageManager": "bun@1.3.13",

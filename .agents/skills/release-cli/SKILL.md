@@ -82,7 +82,7 @@ git push origin main
 git push origin cli-vX.Y.Z
 ```
 
-The `cli-vX.Y.Z` tag starts the `Release CLI` GitHub Actions workflow. The workflow verifies the tag matches `package.json`, runs `bun run release:cli:check`, then publishes to npm using `secrets.NPM_TOKEN`.
+The `cli-vX.Y.Z` tag starts the `Release CLI` GitHub Actions workflow. The workflow verifies the tag matches `package.json`, runs `bun run release:cli:check`, then publishes to npm using Trusted Publishing/OIDC.
 
 ## Step 5: Monitor Publish Workflow
 
