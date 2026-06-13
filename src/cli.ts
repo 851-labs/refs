@@ -1,7 +1,10 @@
+import { readFileSync } from "node:fs"
 import { Console, Effect, Option } from "effect"
 import { Argument, Command } from "effect/unstable/cli"
 import { findGitRoot } from "./git.ts"
 import { addReference, cleanReferences, makeWorkspace, removeReference, syncReferences, type Workspace } from "./repository.ts"
+
+const packageJson = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8")) as { version: string }
 
 const withWorkspace = <A, E, R>(run: (workspace: Workspace) => Effect.Effect<A, E, R>) =>
   Effect.gen(function*() {
@@ -93,7 +96,7 @@ export const command = root.pipe(
 
 export const run = command.pipe(
   Command.run({
-    version: "0.1.0"
+    version: packageJson.version
   }),
   Effect.catchTag("RefsError", (error) =>
     Console.error(error.message).pipe(
