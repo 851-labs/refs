@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release CLI"
+  short_description: "Release @851-labs/refs to npm"
+  default_prompt: "Use $release-cli to release a new @851-labs/refs CLI version."
