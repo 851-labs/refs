@@ -7,10 +7,17 @@
   "bin": {
     "refs": "dist/bin.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/851-labs/refs.git"
+  },
   "files": [
     "dist",
     "README.md"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "cli": "bun run src/bin.ts",
     "build": "bun build ./src/bin.ts --target=node --outfile=dist/bin.js",
